@@ -10,7 +10,7 @@ import pandas as pd
 # Get directories for input data CSVs and create output for processed files.
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = PROJECT_ROOT / "idx_data" / "csv"
-OUTPUT_DIR = PROJECT_ROOT / "data" / "processed"
+OUTPUT_DIR = PROJECT_ROOT / "data" / "processed" / "week1"
 START_MONTH = "202401" # Starting of data range
 END_MONTH = (date.today().replace(day=1) - timedelta(days=1)).strftime("%Y%m") # Get today's month in YYYYMM
 
