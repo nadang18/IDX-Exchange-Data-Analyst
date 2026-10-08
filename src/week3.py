@@ -81,7 +81,7 @@ def merge_rates(df, rates, date_column):
     if missing.any():
         months = sorted(enriched.loc[missing, "year_month"].unique())
         raise ValueError(f"{missing.sum():,} rows have no mortgage rate; unmatched months: {months}")
-    print(f"{date_column}: {len(enriched):,} rows after merge; null rates: 0 (PASS)")
+    print(f"{date_column}: {len(enriched):,} rows after merge; null rates: 0")
     return enriched
 
 
