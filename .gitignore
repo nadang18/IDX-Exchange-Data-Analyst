@@ -1,4 +1,6 @@
 # Original downloaded data and scripts stay local.
+/data/idxdata/
+# Protect the legacy location if recreated.
 /idx_data/
 
 # Generated datasets stay local; regenerate them with src/week1.py.

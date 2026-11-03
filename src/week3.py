@@ -2,7 +2,7 @@
 
 Run: python src/week3.py (requires pandas and an internet connection).
 Matches the notebook's full sold_dfs/listing_dfs, not the Residential subsets.
-Inputs: idx_data/csv/CRMLSListingYYYYMM.csv and CRMLSSoldYYYYMM[_filled].csv.
+Inputs: data/idxdata/csv/CRMLSListingYYYYMM.csv and CRMLSSoldYYYYMM[_filled].csv.
 Outputs: data/processed/week3/. No rows are deduplicated or filtered by property type.
 
 Source: Freddie Mac, MORTGAGE30US, retrieved from FRED, St. Louis Fed:
@@ -20,7 +20,7 @@ from urllib.request import urlopen
 import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = PROJECT_ROOT / "idx_data" / "csv"
+DATA_DIR = PROJECT_ROOT / "data" / "idxdata" / "csv"
 OUTPUT_DIR = PROJECT_ROOT / "data" / "processed" / "week3"
 FRED_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US"
 RATE_COLUMN = "rate_30yr_fixed"
