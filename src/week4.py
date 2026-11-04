@@ -31,15 +31,20 @@ NUMERIC_TYPES = {
     "BathroomsTotalInteger": "Int64",
 }
 
+# Preserve source attributes on each record; no later ID-only merge is needed.
 fin_metadata = [
     "ListingKey",
     "ListingId",
+    "PropertySubType",
     "OriginalListPrice",
     "ListPrice",
     "ClosePrice",
     "ListingContractDate",
     "PurchaseContractDate",
     "CloseDate",
+    "ListOfficeName",
+    "BuyerOfficeName",
+    "MLSAreaMajor",
     "ContractStatusChangeDate",
     "DaysOnMarket",
     "MlsStatus",

@@ -19,8 +19,9 @@ from week1 import DATA_DIR, START_MONTH, END_MONTH, OUTPUT_DIR as INPUT_DIR
 
 OUTPUT_DIR = INPUT_DIR.parent / "week2"
 num_dist_field = [
-    "ListingId", "ClosePrice", "ListPrice", "OriginalListPrice", "LivingArea",
+    "ListingId", "PropertySubType", "ClosePrice", "ListPrice", "OriginalListPrice", "LivingArea",
     "LotSizeAcres", "BedroomsTotal", "BathroomsTotalInteger", "DaysOnMarket", "YearBuilt",
+    "ListOfficeName", "BuyerOfficeName", "MLSAreaMajor",
 ]
 
 field_labels = {
@@ -271,7 +272,8 @@ def main(show_plots=True):
     (OUTPUT_DIR / "week2_report.txt").write_text(text, encoding="utf-8")
     plot_dir = OUTPUT_DIR / "plots"
     plot_dir.mkdir(exist_ok=True)
-    for field in num_dist_field[1:]:
+    # Text metadata stays in the exports but is not a numeric distribution.
+    for field in field_labels:
         histogram = distribution_figure(cleaned["Listings"], cleaned["Sold"], field)
         save_histogram_png(histogram, field, plot_dir / f"{field}_histogram.png")
         if show_plots:
